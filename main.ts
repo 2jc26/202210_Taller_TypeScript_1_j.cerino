@@ -2,21 +2,21 @@ import {series} from './data.js';
 import {Serie} from './Serie.js';
 
 let seriesTable: HTMLElement = document.getElementById("series")!;
-
 mostrarSeries(series);
+
 
 function mostrarSeries(listaSeries: Serie[]): void {
     let tbodySeries = document.createElement("tbody");
     for(let serie of listaSeries){
         tbodySeries.innerHTML += `
-        <tr class="table-secondary">
+        <tr style="background-color:#F2F3F2">
         <th scope="row">${serie.id}</th>
-            <td>${serie.name}</td>
+            <td style="color:blue">${serie.name}</td>
             <td>${serie.chanel}</td>
             <td>${serie.seasons}</td>
         </tr>`
     }
-    tbodySeries.innerHTML += `<tr><th scope="row">Seasons avarage: ${calcularMedia(listaSeries)}</th></tr>`;
+    tbodySeries.innerHTML += `<tr><th scope="row" colspan="4">Seasons avarage: ${calcularMedia(listaSeries)}</th></tr>`;
     seriesTable.appendChild(tbodySeries);
 }
 

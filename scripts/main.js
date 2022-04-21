@@ -5,9 +5,9 @@ function mostrarSeries(listaSeries) {
     var tbodySeries = document.createElement("tbody");
     for (var _i = 0, listaSeries_1 = listaSeries; _i < listaSeries_1.length; _i++) {
         var serie = listaSeries_1[_i];
-        tbodySeries.innerHTML += "\n        <tr class=\"table-secondary\">\n        <th scope=\"row\">".concat(serie.id, "</th>\n            <td>").concat(serie.name, "</td>\n            <td>").concat(serie.chanel, "</td>\n            <td>").concat(serie.seasons, "</td>\n        </tr>");
+        tbodySeries.innerHTML += "\n        <tr style=\"background-color:#F2F3F2\">\n        <th scope=\"row\">".concat(serie.id, "</th>\n            <td style=\"color:blue\">").concat(serie.name, "</td>\n            <td>").concat(serie.chanel, "</td>\n            <td>").concat(serie.seasons, "</td>\n        </tr>");
     }
-    tbodySeries.innerHTML += "<tr><th scope=\"row\">Seasons avarage: ".concat(calcularMedia(listaSeries), "</th></tr>");
+    tbodySeries.innerHTML += "<tr><th scope=\"row\" colspan=\"4\">Seasons avarage: ".concat(calcularMedia(listaSeries), "</th></tr>");
     seriesTable.appendChild(tbodySeries);
 }
 function calcularMedia(listaSeries) {
